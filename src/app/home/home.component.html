@@ -1,0 +1,29 @@
+<div class="buttons">
+    <img class="button1" (click)="popup = true" src="https://tibbyco.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F5d0a5a49-778f-4345-b595-07d8a52e246f%2Fstar.jpg?id=9c71ad25-ce2e-49eb-a0f1-ff6b8583dcca&table=block&spaceId=7564e478-5428-42c3-9994-1884fd3250a5&width=170&userId=&cache=v2" />
+    <div class="button23" (click)="popup = true"></div>
+    <div class="button23" (click)="popup = true"></div>
+    <img class="button4" (click)="popup = true" src="https://tibbyco.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2Fba0497ab-5e96-471e-a496-a617a49a83da%2Fcash.jpg?id=84c9f6e7-0aec-4869-a7ba-049e6571e272&table=block&spaceId=7564e478-5428-42c3-9994-1884fd3250a5&width=170&userId=&cache=v2" />
+</div>
+
+<div class="overlay" *ngIf="popup">
+    <div class="popup">
+        <a class="close" (click)="popup = false">&times;</a>
+        <h1>Formulaire de contact</h1>
+        <div class="content">
+            <form [formGroup]="contactForm">
+                <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" class="form-control" id="firstname" formControlName="firstname">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="Email" formControlName="email">
+                </div>
+                <br>
+                <div class="action-buttons">
+                    <button class="btn btn-dark" type="submit" (click)="onFormSubmit()" [disabled]="contactForm.invalid">Envoyer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
